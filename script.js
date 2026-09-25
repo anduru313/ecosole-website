@@ -1,8 +1,8 @@
 const reveals = document.querySelectorAll('.reveal');
 
 const regions = {
-  ae: { price: '29 AED', phone: '971565592944' },
-  in: { price: '₹299', phone: '917736342089' }
+  ae: { price: '39.99 AED', phone: '971565592944' },
+  in: { price: '39.99 AED', phone: '917736342089' }
 };
 
 const regionFromUrl = new URLSearchParams(window.location.search).get('region');
@@ -13,7 +13,7 @@ function applyRegion(regionCode) {
     element.textContent = region.price;
   });
   document.querySelectorAll('[data-order-link]').forEach((link) => {
-    const message = encodeURIComponent(`Hi ECOSOLE, I'd like to order the shoe cleaning foam for ${region.price}.`);
+    const message = encodeURIComponent(`Hi ECOSOLE, I'd like to order the waterless shoe cleaning foam for ${region.price}.`);
     link.href = `https://wa.me/${region.phone}?text=${message}`;
   });
 }
